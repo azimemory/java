@@ -1,0 +1,1 @@
+append 여부 확인append 추가된다.

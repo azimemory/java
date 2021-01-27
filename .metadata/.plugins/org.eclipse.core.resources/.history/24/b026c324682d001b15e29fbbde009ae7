@@ -1,0 +1,78 @@
+--NUMBER
+--22BYTE 크기의 타입, 38자리까지 표현 가능
+--부동소수점 표현방식, 고점소수점 표현 방식이 있음
+--부동소수점 표현방식
+--NUMBER_TEST NUMBER
+INSERT INTO TB_TYPE(NUMBER_TEST) VALUES(12345.6789);
+SELECT NUMBER_TEST FROM TB_TYPE;
+
+--고정소수점 표현방식
+--NUMBER(PRECISION, SCALE)
+--PRECISION : 소수점을 포함한 전체 자리수
+--SCALE : 소수점 이하 자리수 (정수부의 자리수는 PRECISION - SCALE)
+
+--SCALE을 생략하고 PRECISION만 지정한 경우
+--소수점에서 반올림처리하여 정수로 표현
+--NUMBER_TEST1 NUMBER(7)
+INSERT INTO TB_TYPE(NUMBER_TEST1) VALUES(12345.6789);
+SELECT NUMBER_TEST1 FROM TB_TYPE;
+
+--SCALE을 지정한 경우
+--SCALE에 지정한 소수점 자리수로 반올림처리하여 표현
+--NUMBER_TEST2 NUMBER(7,1)
+INSERT INTO TB_TYPE(NUMBER_TEST2) VALUES(12345.6789);
+SELECT NUMBER_TEST2 FROM TB_TYPE;
+
+--NUMBER_TEST3 NUMBER(7,3)
+--PRECISION : 7, SCALE:3 -> 정수는 4자리까지 표현가능
+--INSERT INTO TB_TYPE(NUMBER_TEST3) VALUES(12345.6789);
+INSERT INTO TB_TYPE(NUMBER_TEST3) VALUES(1234.6789);
+SELECT NUMBER_TEST3 FROM TB_TYPE;
+
+--NUMBER_TEST4 NUMBER(5, -2)
+--SCALE을 음수로 지정하면 소수점 기준으로 왼쪽으로 SCALE의 크기만큼 이동한 자리에서 반올림처리
+INSERT INTO TB_TYPE(NUMBER_TEST4) VALUES(12345.6789);
+SELECT NUMBER_TEST4 FROM TB_TYPE;
+
+--------------------------------------------------------------------------------------
+--SCLAE이 PRECISION보다 큰 경우는 PRECISION은 소수점 자리에 있는 수들의 유효자리수를 표현
+--유효자리수: 소수점 자리에 있는 수 중에서 0이 아닌 수를 의미
+--SCALE은 정밀도 개념을 가지게 된다. SCALE에 지정한 것보다 덜 정밀한 숫자값은 넣을 수 없습니다.
+--NUMBER_TEST5 NUMBER(4,5)
+--INSERT INTO TB_TYPE(NUMBER_TEST5) VALUES(0.1234);
+INSERT INTO TB_TYPE(NUMBER_TEST5) VALUES(0.12345);
+SELECT NUMBER_TEST5 FROM TB_TYPE;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,61 @@
+package com.kh.tour.view;
+
+import java.util.Scanner;
+
+import com.kh.tour.controller.TourController;
+
+public class MainMenu {
+	
+	Scanner sc = new Scanner(System.in);
+	private TourController tc = new TourController();
+	
+	{
+		//환영문구 출력
+		System.out.println("******KH항공사에 오신 고객님 환영합니다******");
+	}
+	
+	public MainMenu() {
+		
+	}
+	
+	public void mainMenu() {
+		
+		System.out.println("현재 보유 금액 : " + tc.bringMyMoney());
+		System.out.println("현재 보유 마일리지 : " + tc.bringMyMile());
+		
+		boolean flg = true;
+		while(flg) {
+			System.out.println("\n번호     목적지            가격           마일리지");
+			System.out.println("1     미국행      300000     3000");
+			System.out.println("2     중국행      200000     2000");
+			System.out.println("3     일본행      150000     1500");
+			System.out.print("목적지 선택(번호입력) : ");
+			int inputNum = sc.nextInt();
+			
+			if(inputNum >= 1 && inputNum < 4) {
+				//사용자가 선택한 비행기 티켓을 구매 가능한 경우
+				if(tc.isAble(inputNum)) {
+					tc.buyTicket(inputNum);
+					System.out.println("티케팅 후 잔액은 : " + tc.bringMyMoney());
+					System.out.println("티케팅 후 마일리지 : " + tc.bringMyMile());
+				//구매가 불가능한 경우	
+				}else {
+					System.out.println("현재 보유금액이 부족합니다.");
+					flg = false; //반복문 탈출
+				}
+			}else {
+				System.out.println("번호를 잘 못 입력하셨습니다.");
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}
