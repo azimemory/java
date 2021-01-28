@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move element &apos;b_char.sql&apos; to &apos;database/src/b_ddl&apos;&#x0D;&#x0A;- Original project: &apos;database&apos;&#x0D;&#x0A;- Destination element: &apos;database/src/b_ddl&apos;&#x0D;&#x0A;- Original element: &apos;b_char.sql&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move file" destination="/src&lt;b_ddl" element1="b_char.sql" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1606118085752" units="0" version="1.0"/>
-</session>
