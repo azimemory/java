@@ -87,20 +87,18 @@ public class Coffee {
 		//재고가 충분해서 재고 차감이 가능한 경우
 		if(stock > coffeeCnt) {
 			stock -= coffeeCnt;
-			
 			if(stock < safetyStock) {
 				secureSafetyStock();
 			}
-			
-			return coffeeCnt;
 		//재고가 충분하지 않아서 재고를 추가하고 차감해야 하는 경우
 		}else if(addStock(coffeeCnt) > 0) {
 			stock -= coffeeCnt;
-			return coffeeCnt;
 		//재고가 충분하지 않은데 잔고가 부족해서 재고 추가가 불가능
 		}else {
 			return 0;
 		}
+		
+		return coffeeCnt;
 	}
 	
 	//재고추가

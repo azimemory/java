@@ -8,7 +8,7 @@ public class KookBabDreeper {
 	// -> 뭐? 그 돈 주고 그거 사먹을 바에야 뜨끈한 국밥 n그릇 든든하게 먹고말지
 	
 	//국밥 가격
-	private final int KOOKBABPRICE = 5000;
+	private int kookbabPrice;
 	//음식명
 	private String foodName;
 	//음식가격
@@ -34,7 +34,7 @@ public class KookBabDreeper {
 	// -> 뭐? 그 돈 주고 그거 사먹을 바에야 뜨끈한 국밥 n그릇 든든하게 먹고말지
 	public void dreep() {
 		
-		int kookbabCnt = foodPrice/KOOKBABPRICE;
+		int kookbabCnt = foodPrice/kookbabPrice;
 		
 		if(kookbabCnt == 0) {
 			kookbabCnt = 1;

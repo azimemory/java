@@ -62,8 +62,8 @@ public class B_arrayPrac {
 		//각각의 배열에 들어있는 숫자들 중 7,8,9번째로 작은 수를 구하기 위해
 		//3개의 배열을 하나의 배열로 합친다.
 		ArrayUtil arrayUtil = new ArrayUtil();
-		int[] res = arrayUtil.addAll(iArr, iArr2);
-		res = arrayUtil.addAll(res, iArr3);
+		int[] res = arrayUtil.merge(iArr, iArr2);
+		res = arrayUtil.merge(res, iArr3);
 		
 		//합쳐진 하나의 배열을 오름차순으로 정렬
 		arrayUtil.sort(res);

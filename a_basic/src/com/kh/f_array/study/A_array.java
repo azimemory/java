@@ -149,35 +149,6 @@ public class A_array {
 		System.out.println("foodArr == copyArr : " + (foodArr == copyArr));
 	}
 	
-	public void testArray7() {
-		//second에 있는 값을 first에, first에 있는 값을 second에 넣어주세요.
-		//단 리터럴로 직접 대입하는 방법은 금지입니다.
-		int first = 10;
-		int second = 20;
-		
-		//임시변수에 first의 값을 저장
-		int temp = first;
-		first = second;
-		second = temp;
-		
-		System.out.println("first : " + first + " / second : " + second);
-		
-		//iArr의 0번 인덱스와 1번 인덱스의 자리를 바꿔주세요.
-		//iArr[0] = 2
-		//iArr[1] = 1
-		
-		//임시변수에 iArr[0] 값을 저장
-		int[] iArr = {1,2};
-		temp = iArr[0];
-		//iArr[0]에 iArr[1] 값을 저장
-		iArr[0] = iArr[1];
-		//iArr[1]에 temp의 값을 저장
-		iArr[1] = temp;
-		
-		//iArr 출력
-		System.out.println(Arrays.toString(iArr));
-	}
-	
 	//배열 오름차순으로 정렬하기
 	public void quizeArray() {
 		int[] iArr = {5,3,4,1,2};
@@ -201,7 +172,7 @@ public class A_array {
 			}
 		}
 		
-		System.out.println("정렬 후 :  " + Arrays.toString(iArr));
+		//System.out.println("정렬 후 :  " + Arrays.toString(iArr));
 
 		//시작 1회차
 		//5,3,4,1,2

@@ -9,7 +9,7 @@ public class StringMethod {
 	public void testMethod() {
 		
 		//1. str의 길이를 출력하세요.
-		//java.lang.String.lenth()
+		//java.lang.String.length()
 		//[출력양식] str의 길이 : ?
 		System.out.println("str의 길이 : " + str.length());
 

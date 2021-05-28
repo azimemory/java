@@ -6,6 +6,27 @@ public class DemensionArrayPrac {
 	
 	Scanner sc = new Scanner(System.in);
 	
+	public int[] quizeAboutEllipsis(int[]...iArrays) {
+		
+		int size = 0;
+		
+		for (int i = 0; i < iArrays.length; i++) {
+			size += iArrays[i].length;
+		}
+		
+		int[] res = new int[size];
+		
+		int loc = 0;
+		for (int i = 0; i < iArrays.length; i++) {
+			for(int j = 0; j < iArrays[i].length; j++) {
+				res[loc] = iArrays[i][j];
+				loc++;
+			}
+		}
+		
+		return res;
+	}
+	
 	//사용자에게 정수값 하나를 입력받아
 	//주소배열의 크기와 배열의 크기가 사용자가 입력한 값인
 	//2차원 배열을 생성하시오
@@ -99,7 +120,38 @@ public class DemensionArrayPrac {
 	}
 	
 	
-	
+	public void quizeAboutSorting () {
+		
+		int[] iArr = {5, 3, 4, 1, 2};
+		//빈 변수
+		int temp = 0;
+		
+		// => iArr을 오름차순으로 정렬해주세요.
+		int index = 0;
+		
+		for(int i = 0; i < iArr.length ; i++) {
+			for(int j = 0; j < iArr.length; j++) {
+				// 5 3
+						// 1    //2
+				if(iArr[index]>iArr[index+1] ) {
+					temp = iArr[index];
+					iArr[index] = iArr[index+1];
+					iArr[index+1] = temp;
+					index++;
+					
+					if( index == 4 ) {
+						index = 0;
+					}
+				}
+			}
+		}
+		
+		
+		System.out.println("{"+ iArr[0] + ", " + iArr[1] + ", " + iArr[2] + ", " + iArr[3] + ", " + iArr[4] + "}" );
+		
+		
+	}
+
 	
 	
 	

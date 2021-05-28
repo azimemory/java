@@ -23,14 +23,14 @@ public class C_arguments {
 	//두 실수를 매개변수로 전달받아
 	//첫번째 매개변수를 두번째 매개변수로 나누고, 그 결과값을 반환하는 메서드
 	//나눈 결과값은 실수로 반환.
+	//매개변수를 '...' 를 사용하면, 메소드 호출 시 넘겨준 값의 수에 따라 자동으로 배열이 생성되고 매개값으로 사용가능
 	public double div(double firstNum, double secondNum) {
 		double res = firstNum/secondNum;
 		return res;
 	}
 	
 	//매개변수로 알파벳 문자를 하나 전달받아
-	//알파벳이 소문자라면 대문자로, 
-	//대문자라면 소문자로 변환해서 반환하는 메서드
+	//알파벳이 소문자라면 대문자로, 대문자라면 소문자로 변환해서 반환하는 메서드
 	public char convertCase(char alpha) {
 		//매개변수로 넘어온 문자가 대문자인지 소문자인지 판단.
 		if(alpha >= 'A' && alpha <= 'Z') {

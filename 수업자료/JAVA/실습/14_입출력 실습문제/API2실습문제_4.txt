@@ -1,0 +1,16 @@
+패키지명 : 
+com.kh.prac4.controller.makeFile
+com.kh.prac4.run.Run
+
+- makeFile 클래스
+	public void filetMethod()
+		>> File dir으로 "dir" 디렉토리 생성
+			
+		>> File[] f으로 "dir\\file1.txt", "dir\\file2.jpg", "dir\\file3.dat"
+		     , "dir\\file4.xml" 파일들을 생성(for문 활용)	
+
+		
+- 어떤 것 때문에 예외 처리를 해야하는지 확인하고 try~catch문으로 예외 처리
+
+출력 답 :
+	(워크스페이스를 클릭해서 F5를 투르면 dir폴더 안에 네가지의 파일이 생성되었는지를 확인

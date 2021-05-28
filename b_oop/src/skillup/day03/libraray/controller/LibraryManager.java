@@ -7,7 +7,7 @@ import skillup.day03.libraray.model.vo.Member;
 
 public class LibraryManager {
 	
-	private Member mem = null;
+	private Member mem;
 	private Book[] bList = new Book[5];
 	
 	{

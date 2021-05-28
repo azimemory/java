@@ -7,7 +7,7 @@ public class C_for {
 	//for(초기식;조건식;증감식){실행코드}
 	public static void main(String[] args) {
 		C_for test = new C_for();
-		test.testFor();
+		test.quiz();
 	}
 	
 	public void testFor() {

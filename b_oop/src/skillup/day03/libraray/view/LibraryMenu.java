@@ -29,8 +29,8 @@ public class LibraryMenu {
 			System.out.println("==== 메뉴 ====");
 			System.out.println("1. 마이페이지");
 			System.out.println("2. 도서 전체 조회");
-			System.out.println("3. 도서 검색");
-			System.out.println("4. 도서 대여하기");
+			System.out.println("3. 도서 제목 검색");
+			System.out.println("4. 도서 대여");
 			System.out.println("9. 프로그램 종료하기");
 			System.out.print("입력 : ");
 			
@@ -62,7 +62,7 @@ public class LibraryMenu {
 		System.out.print("검색할 제목 : ");
 		Book[] searchList = lm.searchBook(sc.next());
 		for (int i = 0; i < searchList.length; i++) {
-			System.out.println(searchList[i].getTitle());
+			System.out.println(searchList[i]);
 		}
 	}
 	

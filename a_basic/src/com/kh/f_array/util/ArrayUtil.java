@@ -4,7 +4,7 @@ public class ArrayUtil {
 	
 	// 배열 -> int[]
 	
-	//매개변수로 전달 받은 배열을 오름차순으로 정렬하는 메서드
+	//매개변수로 전달 받은 int배열을 오름차순으로 정렬하는 메서드
 	public void sort(int[] iArr) {
 		//앞에서 두번째 칸까지 정렬이 마무리 되어야 배열의 정렬이 완성
 		//필요한 반복 횟수는 배열의 크기 - 1 
@@ -23,7 +23,7 @@ public class ArrayUtil {
 		}
 	}
 	
-	//첫번째 매개변수로 넘어온 배열에, 두번째 매개변수로 넘어온 값을 추가해
+	//첫번째 매개변수로 넘어온 int배열에, 두번째 매개변수로 넘어온 값을 추가해
 	//그 배열을 반환하는 메서드
 	public int[] add(int[] iArr, int data) {
 		//int[] testArr = {1,2,3,4,5};
@@ -44,14 +44,14 @@ public class ArrayUtil {
 		return resArr;
 	}
 	
-	//기능 : 매개변수로 넘어온 두 배열을 하나의 배열로 합쳐 반환하는 메서드
-	//메서드 이름 : addAll
+	//기능 : 매개변수로 넘어온 두 int배열을 하나의 배열로 합쳐 반환하는 메서드
+	//메서드 이름 : merge
 	//메서드를 작성하고 Run 클래스에 테스트까지 완료 해주세요.
 	//ex) int[] data = {1,2,3,4,5}
 	//	  int[] data2 = {6,7,8,9,0}
 	//    util.addAll(data,data2) -> [1,2,3,4,5,6,7,8,9,0]
 	//난이도 : ***
-	public int[] addAll(int[] firstArr, int[] secondArr) {
+	public int[] merge(int[] firstArr, int[] secondArr) {
 		
 		//두 배열의 크기를 합친 크기의 배열을 새로 생성
 		int[] res = new int[firstArr.length + secondArr.length];
@@ -72,7 +72,7 @@ public class ArrayUtil {
 	}
 
 	
-	//기능 : 원하는 인덱스 구간의 데이터를 잘라내어 새로운 배열로 만들어 반환하는 메서드
+	//기능 : 원하는 인덱스 구간의 데이터를 잘라내어 새로운 int배열로 만들어 반환하는 메서드
 	//인덱스 구간 : 시작 인덱스~ 끝 인덱스의 앞 인덱스까지의 데이터
 	//첫번째 매개변수 : 배열
 	//두번째 매개변수 : 시작 인덱스
@@ -105,21 +105,34 @@ public class ArrayUtil {
 	//난이도 : ****
 	//ex) int[] data = {1,2,3,4,5};
 	//    util.remove(data,2) -> [1,2,4,5]
-	public int[] remove(int[] iArr, int idx) {
+	public int[] remove(int[] iArr, int rmIdx) {
 		//매개변수로 넘어온 배열보다 크기가 1작은 새로운 배열 생성
 		int[] res = new int[iArr.length -1];
 		
-		//iArr의 값들을 res로 옮겨 담는다.
-		for(int i = 0; i < res.length; i++) {
-			if(i < idx) {
-				res[i] = iArr[i];
-			}else {
-				//매개변수로 넘어온 idx 의 인덱스 데이터 차례가 되면
-				//해당 데이터는 건너뛰고 다음 데이터를 옮겨 담는다.
-				res[i] = iArr[i+1];
+		int idx = 0;
+		for (int i = 0; i < iArr.length; i++) {
+			
+			if(i == rmIdx) {
+				continue;
 			}
+			
+			res[idx] = iArr[i];
+			idx++;
 		}
 		
+		
+		//iArr의 값들을 res로 옮겨 담는다.
+		/*
+		 * for(int i = 0; i < res.length; i++) {
+		 * if(i < idx) {
+		 * res[i] = iArr[i];
+		 * }else {
+		 * //매개변수로 넘어온 idx 의 인덱스 데이터 차례가 되면
+		 * //해당 데이터는 건너뛰고 다음 데이터를 옮겨 담는다.
+		 * res[i] = iArr[i+1];
+		 * }
+		 * }
+		 */
 		return res;
 	}
 	

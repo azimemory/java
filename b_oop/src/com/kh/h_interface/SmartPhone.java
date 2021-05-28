@@ -1,7 +1,7 @@
 package com.kh.h_interface;
 
 //implements : 인터페이스 구현, 인터페이스의 필드변수와 메서드, 타입을 가져온다.
-public class SmartPhone extends Computer implements BatteryDetachable, CommunicationAvailable{
+public class SmartPhone extends Computer implements BatteryDetachable, Communicatable{
 	
 	//제조사, 상품명, 가격, cpu, ram, 통신사
 	private String mobileAgency; //통신사

@@ -14,7 +14,9 @@ public class DemensionArray {
 
 		//2차원 배열의 메모리 할당
 		//크기가 4인 int[] 3개를 가지는 2차원 배열
+
 		doubleArr = new int[3][4];
+		
 		//주소 배열의 크기가 3
 		//데이터를 저장할 int[] 크기는 4
 		//quize! 이때 heap 영역에 생성되는 배열의 개수 ?

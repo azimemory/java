@@ -50,7 +50,7 @@ public class Run {
 			//만약에 products[i] 가 Computer타입을 가지고 있으면
 			//powerOn 메서드를 호출
 			//instanceof 연산자 
-			// reference instanceof Class : 레퍼런스가 가지고 있는 타입을 확인해서 true, false 반환
+			// reference instanceof type : 레퍼런스가 가지고 있는 타입을 확인해서 true, false 반환
 			if(products[i] instanceof Computer) {
 				//다운캐스팅을 통해서 Computer 타입으로 변경해주고
 				//powerOn메서드 호출
