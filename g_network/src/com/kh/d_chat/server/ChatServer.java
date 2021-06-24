@@ -53,7 +53,6 @@ public class ChatServer {
 					while(true) {
 						String data = br.readLine();
 						if(data != null) {
-							System.out.println(data);
 							allClientWrite(data);
 						}
 					}

@@ -2,11 +2,11 @@ package com.kh.tour.model.vo;
 
 public class Tourist {
 	
-	private int myMoney;//보유 금액
-	private int myMile;//마일리지
+	private int myMoney;
+	private int myMile;
 	
 	public Tourist() {
-		
+		// TODO Auto-generated constructor stub
 	}
 
 	public Tourist(int myMoney, int myMile) {
@@ -30,4 +30,5 @@ public class Tourist {
 	public void setMyMile(int myMile) {
 		this.myMile = myMile;
 	}
+
 }

@@ -85,6 +85,12 @@ public class Coffee {
 	//매개변수로 넘어온 커피의 수량만큼 재고에 추가하고
 	//환불금액을 반환
 	public int registerRefund(int refundCnt) {
+		
+		if(salesCount < refundCnt) {
+			System.out.println("누적판매량을 초과하여 환불할 수 없습니다.");
+			return 0;
+		}
+		
 		//환불 수량만큼 재고에 추가하고 지출금액을 계산
 		int expencesPrice = salesPrice * addStock(refundCnt, salesPrice);
 		

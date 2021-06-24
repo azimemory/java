@@ -47,7 +47,6 @@ public class Student implements Comparable<Student>{
 		
 		
 		//Quize. 이름으로 오름차순, 동명이인일 경우 나이로 내림차순
-		
 		int res = this.name.compareTo(o.getName());
 		
 		//이름이 같지 않은 경우

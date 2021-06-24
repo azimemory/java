@@ -1,86 +1,68 @@
 package com.kh.c_collection.a_list;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import com.kh.c_collection.model.vo.Music;
 
+
 public class ListTest {
 	
+	// CRUD : Create(생성,추가), Read(읽어오기), Update(수정), Delete(삭제)
 	public void doList() {
 		
-		//Generic : 클래스 내부에서 사용하는 타입을 외부에서 결정하는 것
-		//			인스턴스화 할 때 타입이 결정된다.
-		//			Generic을 지정하지 않으면 Object타입으로 지정된다.
-		//			자바 1.7버전부터 Generic 타입 유추 기능이 도입
-		//	Generic을 사용하는 이유 : 안정성의 문제. 
-		//List<Music> list = new ArrayList<Music>();
-		List<Music> list = new ArrayList<>();
-		
-		//CRUD : Create(생성), Read(읽기), Update(수정), Delete(삭제)
-		// * 늘 출력해서 확인해보기. -> System.out.println(list);
+		//ArrayList
+		List list = new ArrayList(); //Generic을 지정하지 않으면 기본적으로 Object타입
 		
 		//1. list의 제일 끝에 데이터를 추가
-		//new Music("백지영","총맞은것처럼")
-		//new Music("김경호","금지된사랑")
-		//new Music("윤도현","나는나비")
-		list.add(new Music("백지영","총맞은것처럼"));
-		list.add(new Music("김경호","금지된사랑"));
-		list.add(new Music("윤도현","나는나비"));
+		//추가할 데이터 : 여러분들이 좋아하는 노래 2곡 
+		//ex)
+		//new Music("백지영", "총맞은 것처럼")
+		//new Music("윤도현", "사랑했나봐")
+		list.add(new Music("백지영","총맞은 것처럼"));
+		list.add(new Music("윤도현","사랑했나봐"));
+		System.out.println("1) list의 제일 끝에 데이터를 추가 : \n   " + list + "\n");
 		
-		//size() : 리스트이 크기를 반환
-		for(int i = 0; i < list.size(); i++) {
-			//get() : 매개변수로 지정한 인덱스의 데이터를 반환
-			System.out.println(list.get(i));
-		}
+		//2. list의 크기를 출력하세요.
+		System.out.println("2) list의 크기 : \n   " + list.size() + "\n");
 		
-		//2. 2번 인덱스에 데이터 추가하기
-		//new Music("자우림","스물 다섯, 스물하나")
-		list.add(2, new Music("자우림","스물 다섯, 스물하나"));
-		//for-each문 사용가능!
-		System.out.println("\n/////////////////////");
-		for (Music music : list) {
-			System.out.println(music);
-		}
+		//3. 2번 인덱스에 원하는 노래 인스턴스를 추가하세요.
+		list.add(2, new Music("queen", "we will rock you"));
+		System.out.println("3) 2번 인덱스에 원하는 노래 인스턴스를 추가 : \n   " + list + "\n");
 		
-		//3. list안에 들어있는 데이터 개수 출력하기
-		System.out.println("3. 리스트 안의 요소들의 개수 : " + list.size());
+		//4. list의 2번 인덱스에 저장된 값을 받아서 출력하세요.
+		System.out.println("4) 2번 인덱스에 저장된 값 : \n   " + list.get(2) + "\n");
 		
-		
-		//4. Music타입의 레퍼런스로 list의 2번 인덱스에 
-		//  저장된 값 받아서 출력하기
-		Music music = (Music) list.get(2);
-		System.out.println("4. " + music);
-		
-		
-		//5. 2번 인덱스의 데이터를 수정
-		//new Music("아이유","너랑나")
+		//5. 2번 인덱스에 담긴 데이터를 new Music("아이유","너랑나") 로 수정하세요
 		list.set(2, new Music("아이유","너랑나"));
-		System.out.println("\n5.///////////////////////////");
-		for (Object object : list) {
-			System.out.println(object);
-		}
+		System.out.println("5) 2번 인덱스 수정 : \n   " + list + "\n");
 		
-		//6. 2번 인덱스 데이터 삭제
+		//6. 2번 인덱스에 담긴 데이터를 삭제하세요.
 		list.remove(2);
-		System.out.println("\n6.///////////////////////////");
-		for (Object object : list) {
-			System.out.println(object);
-		}
+		System.out.println("6) 2번 인덱스에 담긴 데이터를 삭제 : \n   " + list + "\n");
 		
-		//7. new Music("백지영","총맞은것처럼") 데이터가
-		//  list안에 있는지 확인해보기
-		//  * 만약에 없다고 나오면 Music클래스의 코드를 수정해 정확한 값 받아보기
-		System.out.println("7. " + list.contains(new Music("백지영","총맞은것처럼")));
+		//7. list의 0~1번 인덱스 사이의 데이터를 잘라내어 새로운 List로 반환받아 출력하세요.
+		List subList = list.subList(0, 1);
+		System.out.println("7) list의 0~1번 인덱스를 잘라내어 새로운 List로 반환 : \n   " + subList + "\n");
 		
-		//  * 8. new Music("백지영","총맞은것처럼") 데이터가 저장된 인덱스 반환
-		System.out.println("8. " + list.indexOf(new Music("백지영","총맞은것처럼")));
+		//8. 2번 인덱스에 new Music("김광석","서른즈음에")를 추가 하세요.
+		//   새롭게 추가한 new Music("김광석","서른즈음에") 이 list에 존재하는지 확인하고 결과를 출력하세요.
+		//   만약 결과가 예상한 것과 다르게 출력된다면 알맞은 결과가 나오도록 코드를 수정하세요.
+		list.add(2, new Music("김광석","서른즈음에"));
+		System.out.println("8) 2번 인덱스에 [김광석 - 서른즈음에] 를 추가 : \n   " + list + "\n");
+		System.out.println("8) [김광석 - 서른즈음에]는 list에 존재 하나요? : \n   " 
+							+ list.contains(new Music("김광석","서른즈음에")) + "\n"); 	
 		
-		//9. list의 0번 인덱스부터 2번 인덱스 앞(1번 인덱스까지) 의 데이터를 잘라내
-		// 새로운 ArrayList로 반환받아 출력
-		List subList = list.subList(0, 2);
-		System.out.println("9. " + subList);
+		//9. [김광석 - 서른즈음에]가 담긴 인덱스를 반환 받아 출력하세요.
+		System.out.println("9) [김광석 - 서른즈음에] 인덱스 : \n   " + list.indexOf(new Music("김광석","서른즈음에"))); 	
+
+		
+		
+	
+		
+		
+		
+		
 		
 		
 		

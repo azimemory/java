@@ -2,12 +2,12 @@ package com.kh.tour.model.vo;
 
 public class Airline {
 	
-	private String country; //나라
-	private int mileage; //마일리지
-	private int airfare; //항공가격
+	private String country;
+	private int mileage;
+	private int airfare;
 	
 	public Airline() {
-		
+		// TODO Auto-generated constructor stub
 	}
 
 	public Airline(String country, int mileage, int airfare) {
@@ -39,18 +39,10 @@ public class Airline {
 
 	public void setAirfare(int airfare) {
 		this.airfare = airfare;
-	};
+	}
 	
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

@@ -6,12 +6,12 @@ public class A_ControlThread implements Runnable{
 		int cnt = 0;
 		while(cnt < 10) {
 			try {
-				System.out.println(Thread.currentThread().getName()
+				System.out.println(
+						Thread.currentThread().getName()
 						+" : " + cnt + "초");
 				cnt++;
-				//이 쓰래드를 1초동안 일시정지
-				//sleep()
-				Thread.sleep(5000);
+				
+				Thread.sleep(3000); //이 쓰래드를 3초동안 일시정지 sleep()
 			} catch (InterruptedException e) {
 				System.out.println("빨리감기!!");
 			}

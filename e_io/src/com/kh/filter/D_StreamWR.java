@@ -36,10 +36,6 @@ public class D_StreamWR {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
-		
 	}
 	
 	//InputStreamReader
@@ -50,7 +46,7 @@ public class D_StreamWR {
 		try(BufferedReader br
 				= new BufferedReader(
 						new InputStreamReader(
-						new FileInputStream(fileName)))){
+								new FileInputStream(fileName)))){
 			
 			System.out.println(br.readLine());
 			

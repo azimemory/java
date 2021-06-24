@@ -45,7 +45,9 @@ public class SimpleMap<K,V> {
 			Object[] tempArr = new Object[arraySize];
 			//기존 배열의 값들을 tempArr로 복제
 			for (int i = 0; i < simpleMap.length; i++) {
-				tempArr[i] = simpleMap[i];
+				//키값을 해싱해 인덱스를 지정
+				int index = simpleHashMethod(key);
+				tempArr[index] = simpleMap[i];
 			}
 			//simpleMap의 레퍼런스에 tempArr 저장
 			simpleMap = tempArr;
@@ -70,17 +72,11 @@ public class SimpleMap<K,V> {
 	//remove
 	//삭제된 데이터를 반환
 	public V remove(K key) {
-		//키값을 해싱해 삭제할 데이터가 저장된 인덱스를 구한다.
 		int index = simpleHashMethod(key);
-		//인덱스에 저장된 데이터를 미리 res에 담아둔다.
 		V res = (V)simpleMap[index];
-		//인덱스에 저장된 데이터를 삭제한다.
 		simpleMap[index] = null;
-		//keySet에서 매개변수로 넘어온 key값을 지워준다.
 		keySet.remove(key);
-		//size를 1 감소시킨다.
 		size--;
-		//res 반환
 		return res;
 	}
 	

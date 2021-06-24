@@ -17,7 +17,7 @@ public class Run {
 		}
 	}
 	
-	private void checkScore(int score) throws MyUncheckedException{
+	private void checkScore(int score){
 		//0보다 작거나 100보다 큰 값이 score에 넘어오면 예외를 발생(MyUncheckedException)
 		if(score >= 0 && score < 100) {
 			System.out.println("당신의 점수는 " + score + " 입니다.");

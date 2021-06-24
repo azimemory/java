@@ -36,7 +36,6 @@ public class InetTest {
 			InetAddress naverIP = InetAddress.getByName("www.naver.com");
 			System.out.println("네이버 서버 이름 : " + naverIP.getHostName());
 			System.out.println("네이버 서버 IP : " + naverIP.getHostAddress());
-			
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

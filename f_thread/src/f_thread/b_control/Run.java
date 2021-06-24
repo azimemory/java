@@ -7,7 +7,7 @@ public class Run {
 	//실행(Running) : 실행되고 있는 상태
 	//실행대기(Runnable) : 실행될 수 있지만 아직 스케쥴링이 되지 않아서 실행을 기다리고 있는 상태
 	//일시정지 : 쓰래드를 실행할 수 없는 상태
-	// 1) wating : Object.wait(), join(), sleep() 메서드에 의해 멈춰진 상태
+	// 1) wating : Object.wait(), Thread.join() 메서드에 의해 멈춰진 상태
 	// 2) timed wating : wait(milliseconds), join(milliseconds), sleep(milliseconds)
 	//	지정된 시간동안 쓰래드가 일시정지 되었다가, 시간이 지나고나면 다시 실행대기가 되는 상태
 	// 3) BLOCKED : 사용하고자 하는 객체가 LOCK에 걸려 대기하는 경우
@@ -21,30 +21,10 @@ public class Run {
 
 	public static void main(String[] args) {
 		
-		Thread m1 = new Thread(new A_ControlThread());
-		m1.setName("m1");
-		m1.start();
+		Thread controlThread = new Thread(new A_ControlThread());
+		controlThread.setName("controlThread");
+		controlThread.start();
 		
-		new B_Interrupt().interruptTest(m1);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
+		new B_Interrupt().interruptTest(controlThread);
 	}
 }

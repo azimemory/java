@@ -11,9 +11,9 @@ import com.kh.c_collection.model.vo.Music;
 public class SetTest {
 	
 	//Set의 특징
-	//저장되는 값들의 순서를 유지하지 않는다. -> 순서가 없기 때문에 원하는 데이터만 꺼내는 것이 불가능
-	//									get메서드가 없다.
-	//저장되는 값들의 중복을 허용하지 않는다.(null의 중복도 허용하지 않는다.)
+	//저장되는 값들의 순서를 유지하지 않는다. 
+	//          -> 순서가 없기 때문에 원하는 데이터만 꺼내는 것이 불가능, get메서드가 없다.									
+	//저장되는 값들의 중복을 허용하지 않는다.
 	//구현 클래스 : HashSet, LinkedHashSet(순서가 유지되는 Set)
 	
 	public void doSet() {

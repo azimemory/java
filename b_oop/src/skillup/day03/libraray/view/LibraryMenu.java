@@ -50,7 +50,7 @@ public class LibraryMenu {
 		}
 	}
 	
-	public void selectAll() {
+	private void selectAll() {
 		Book[] bList = lm.selectAll();
 		System.out.println("\n====도서 목록====");
 		for (int i = 0; i < bList.length; i++) {
@@ -58,7 +58,7 @@ public class LibraryMenu {
 		}
 	}
 	
-	public void searchBook() {
+	private void searchBook() {
 		System.out.print("검색할 제목 : ");
 		Book[] searchList = lm.searchBook(sc.next());
 		for (int i = 0; i < searchList.length; i++) {
@@ -66,16 +66,9 @@ public class LibraryMenu {
 		}
 	}
 	
-	public void rentBook() {
+	private void rentBook() {
 		System.out.print("대여할 도서 번호 선택 : ");
-		int result = lm.rentBook(sc.nextInt());
-		switch (result) {
-		case 0 : System.out.println("성공적으로 대여되었습니다.");
-			break;
-		case 1 : System.out.println("나이 제한으로 대여 불가능입니다.");
-			break;
-		case 2 : System.out.println("성공적으로 대여되었습니다. 요리학원 쿠폰이 발급되었습니다. 마이페이지에서 확인하세요.");
-		}
+		System.out.println(lm.rentBook(sc.nextInt()));
 	}
 	
 	

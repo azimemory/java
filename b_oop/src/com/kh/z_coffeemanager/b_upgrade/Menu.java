@@ -76,7 +76,7 @@ public class Menu {
 		System.out.println("\n 판매등록(0)");
 		System.out.println(" 환불등록(1)");
 		System.out.println(" 반품등록(2)");
-		System.out.print("입력 : ");
+		System.out.print(" 입력 : ");
 		
 		switch(sc.nextInt()) {
 		case 0 : showSales(); break;

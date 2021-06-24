@@ -26,7 +26,7 @@ public class C_ObjectIO {
 			oos.writeObject(phone);
 			oos.writeObject(student);
 			oos.writeObject(teacher);
-			
+			oos.flush();
 			System.out.println("Student.dat파일 생성완료");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

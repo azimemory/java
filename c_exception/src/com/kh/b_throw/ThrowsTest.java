@@ -27,7 +27,7 @@ public class ThrowsTest {
 	public void testB() throws NullPointerException{
 		String str = null;
 		str.length();
-		System.out.println("호출한 메서드에게 돌려보낸다.");
+		System.out.println("호출한 메서드에게 돌려보낸다.s");
 	}
 	
 	//ArrayIndexOutOfBoundsException

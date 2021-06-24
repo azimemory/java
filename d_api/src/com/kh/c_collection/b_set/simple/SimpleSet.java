@@ -50,16 +50,20 @@ public class SimpleSet<E> implements Iterable<E>{
 			}
 		}else {
 			//배열의 크기를 두배로 확장
-			arraySize *= 2;
+			arraySize *= 2;			
 			Object[] tempArr = new Object[arraySize];
-			for(int i = 0; i < simpleSet.length; i++) {
-				tempArr[i] = simpleSet[i];
+			
+			for(int i = 0; i < simpleSet.length; i++) {	
+				//확장한 크기로 인덱스를 구한다.
+				int index = simpleHashMethod((E)simpleSet[i]);
+				tempArr[index] = simpleSet[i];
 			}
+			
 			//simpleSet의 레퍼런스에 두배 확장한 배열을 옮겨담고
 			simpleSet = tempArr;
 			
-			//확장한 크기로 인덱스를 구한다.
 			int index = simpleHashMethod(data);
+			
 			//만약 배열의 값이 null일 때만
 			if(simpleSet[index] == null) {
 				//데이터를 추가하고
@@ -81,6 +85,14 @@ public class SimpleSet<E> implements Iterable<E>{
 		return res;
 	}
 
+
+	
+	
+	
+	
+	
+	
+	
 	@Override
 	public Iterator<E> iterator() {		
 		return new Iterator<E>() {
@@ -89,10 +101,10 @@ public class SimpleSet<E> implements Iterable<E>{
 			private int iterIdx;
 			//Object[]안에서 실제로 탐색한 인덱스
 			private int setIdx;
-
+			
 			@Override
 			public boolean hasNext() {
-				if(iterIdx < size) {
+				if(iterIdx < size-1) {
 					return true;
 				}
 				return false;
