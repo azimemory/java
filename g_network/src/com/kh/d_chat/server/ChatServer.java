@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ChatServer {
@@ -17,7 +18,7 @@ public class ChatServer {
 	public ChatServer() {
 		try {
 			server = new ServerSocket(8989);
-			socketList = new ArrayList<Socket>();
+			socketList = Collections.synchronizedList(new ArrayList<Socket>());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
